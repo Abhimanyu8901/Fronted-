@@ -1,2 +1,2 @@
-# Fronted-
+# Frontend-
 Real Time Collaboration Tool 

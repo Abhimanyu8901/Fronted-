@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h1>Register</h1>
+            <form id="register-form" onsubmit="handleRegister(event)">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" required>
+                
+                <label for="middle-name">Middle Name:</label>
+                <input type="text" id="middle-name">
+
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" min="1" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="address">Address:</label>
+                <textarea id="address" rows="3" required></textarea>
+
+                <label for="state">State:</label>
+                <input type="text" id="state" required>
+
+                <label for="district">District:</label>
+                <input type="text" id="district" required>
+
+                <label for="pin-code">PIN Code:</label>
+                <input type="number" id="pin-code" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" pattern="[0-9]{10}" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" minlength="6" required>
+
+                <label for="verify-password">Verify Password:</label>
+                <input type="password" id="verify-password" minlength="6" required>
+
+                <label for="profile-pic">Profile Picture:</label>
+                <input type="file" id="profile-pic" accept="image/*">
+
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Blogify. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function handleRegister(event) {
+            event.preventDefault();
+
+            const password = document.getElementById("password").value;
+            const verifyPassword = document.getElementById("verify-password").value;
+
+            if (password !== verifyPassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            const firstName = document.getElementById("first-name").value;
+            const middleName = document.getElementById("middle-name").value;
+            const lastName = document.getElementById("last-name").value;
+            const dob = document.getElementById("dob").value;
+            const age = document.getElementById("age").value;
+            const gender = document.getElementById("gender").value;
+            const address = document.getElementById("address").value;
+            const state = document.getElementById("state").value;
+            const district = document.getElementById("district").value;
+            const pinCode = document.getElementById("pin-code").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+
+            alert(`
+                Registration Successful!
+                Name: ${firstName} ${middleName} ${lastName}
+                DOB: ${dob}, Age: ${age}
+                Gender: ${gender}
+                Address: ${address}, ${district}, ${state}, PIN: ${pinCode}
+                Phone: ${phone}, Email: ${email}
+            `);
+
+            // Redirect to login page after registration
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

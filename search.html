@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Blogs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="search-page">
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="login.html">Login/Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h1>Search Blogs</h1>
+            <div class="search-bar-wrapper">
+                <input type="text" id="search-input" placeholder="Search by blog title..." oninput="filterBlogs()">
+            </div>
+            <div id="search-results" class="blog-container">
+                <!-- Search results will be dynamically displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Blogify. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/search.js"></script>
+</body>
+</html>
